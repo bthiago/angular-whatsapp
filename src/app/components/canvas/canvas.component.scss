@@ -5,9 +5,6 @@
   margin-top: 15px;
   background-color: $mdc-theme-background;
 
-  mdc-drawer-spacer {
-    background-color: $mdc-theme-primary;
-  }
   .canvas-drawer {
     @include mdc-drawer-ink-color(#fff);
   }

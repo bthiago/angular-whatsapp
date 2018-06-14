@@ -1,7 +1,4 @@
-import {Injectable} from '@angular/core';
-
-@Injectable()
-export class ChatModel {
+export class Chat {
   private _picture: string;
   private _name: string;
   private _time: Date;

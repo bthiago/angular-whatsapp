@@ -1,10 +1,16 @@
 <div class="container">
   <div class="canvas-content__drawer canvas-content__drawer--persistent">
     <mdc-drawer #persistent drawer='persistent' class="mdc-drawer--open">
-      <mdc-drawer-spacer>
-        <mdc-text-field>
-        </mdc-text-field>
-      </mdc-drawer-spacer>
+      <mdc-toolbar>
+        <mdc-toolbar-row>
+          <mdc-toolbar-section [alignStart]="true">
+          </mdc-toolbar-section>
+          <mdc-toolbar-section [alignEnd]="true" [shrinkToFit]="true">
+            <a href="#/more" mdcRipple mdc-toolbar-icon material-icon>message</a>
+            <a href="#/more" mdcRipple mdc-toolbar-icon material-icon>more_vert</a>
+          </mdc-toolbar-section>
+        </mdc-toolbar-row>
+      </mdc-toolbar>
       <mdc-list-group>
         <mdc-list>
           <app-chat-list></app-chat-list>
@@ -12,19 +18,6 @@
       </mdc-list-group>
     </mdc-drawer>
     <div>
-      <mdc-toolbar>
-        <mdc-toolbar-row>
-          <mdc-toolbar-section [alignStart]="true">
-            <mdc-icon mdc-toolbar-menu-icon material-icon (click)="persistent.open()">menu</mdc-icon>
-            <mdc-toolbar-title>Angular Web-Whatsapp</mdc-toolbar-title>
-          </mdc-toolbar-section>
-          <mdc-toolbar-section [alignEnd]="true" [shrinkToFit]="true">
-            <a href="#/file_download" mdcRipple mdc-toolbar-icon material-icon>file_download</a>
-            <a href="#/print" mdcRipple mdc-toolbar-icon material-icon>print</a>
-            <a href="#/more" mdcRipple mdc-toolbar-icon material-icon>more_vert</a>
-          </mdc-toolbar-section>
-        </mdc-toolbar-row>
-      </mdc-toolbar>
       <app-chat-message></app-chat-message>
     </div>
   </div>

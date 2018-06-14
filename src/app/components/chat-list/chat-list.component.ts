@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ChatModel} from '../../classes/ChatClass';
+import {Chat} from '../../classes/chat';
 
 @Component({
   selector: 'app-chat-list',
@@ -7,13 +7,13 @@ import {ChatModel} from '../../classes/ChatClass';
   styleUrls: ['./chat-list.component.scss'],
 })
 export class ChatListComponent implements OnInit {
-  public chats: ChatModel[];
+  public chats: Chat[];
 
   constructor() {
     this.chats = [
-      new ChatModel('', 'Gohan Sayajin', new Date(), ''),
-      new ChatModel('', 'Goku Sayajin', new Date(), ''),
-      new ChatModel('', 'Vegeta Sayajin', new Date(), '')
+      new Chat('', 'Gohan Sayajin', new Date(), ''),
+      new Chat('', 'Goku Sayajin', new Date(), ''),
+      new Chat('', 'Vegeta Sayajin', new Date(), '')
     ];
   }
 
