@@ -1,0 +1,40 @@
+@import "../../../sass/variables";
+@import "../../../../node_modules/@angular-mdc/theme/material";
+
+.container {
+  margin-top: 15px;
+  background-color: $mdc-theme-background;
+
+  .canvas-drawer {
+    @include mdc-drawer-ink-color(#fff);
+  }
+
+  .canvas-content__drawer {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+
+    &--row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &--column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--temporary {
+      position: relative;
+      height: 55vh;
+    }
+
+    &--persistent {
+      display: flex;
+      height: 55vh;
+
+      .mdc-drawer--persistent:not(.mdc-drawer--open) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="canvas-content__drawer canvas-content__drawer--persistent">
+    <mdc-drawer #persistent drawer='persistent' class="mdc-drawer--open">
+      <mdc-drawer-spacer></mdc-drawer-spacer>
+      <mdc-list-group>
+        <mdc-list>
+          <app-chat-list></app-chat-list>
+        </mdc-list>
+      </mdc-list-group>
+    </mdc-drawer>
+    <div>
+      <mdc-toolbar>
+        <mdc-toolbar-row>
+          <mdc-toolbar-section [alignStart]="true">
+            <mdc-icon mdc-toolbar-menu-icon material-icon (click)="persistent.open()">menu</mdc-icon>
+            <mdc-toolbar-title>Angular Web-Whatsapp</mdc-toolbar-title>
+          </mdc-toolbar-section>
+          <mdc-toolbar-section [alignEnd]="true" [shrinkToFit]="true">
+            <a href="#/file_download" mdcRipple mdc-toolbar-icon material-icon>file_download</a>
+            <a href="#/print" mdcRipple mdc-toolbar-icon material-icon>print</a>
+            <a href="#/more" mdcRipple mdc-toolbar-icon material-icon>more_vert</a>
+          </mdc-toolbar-section>
+        </mdc-toolbar-row>
+      </mdc-toolbar>
+      Lorem ipsum dolor sit amet, ad erat postea ullamcorper nec, veri veniam quo et. Diam phaedrum ei mea, quaeque voluptaria
+      efficiantur duo no. Eu adhuc veritus civibus nec, sumo invidunt mel id, in vim dictas detraxit. Per an legere iriure blandit.
+      Veri iisque accusamus an pri.
+    </div>
+  </div>
+</div>
