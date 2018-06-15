@@ -2,17 +2,23 @@
 @import "../../../../node_modules/@angular-mdc/theme/material";
 
 .mdc-layout-grid {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .canvas-wrapper {
+  overflow: hidden;
+  min-height: 600px;
   padding: 0;
   background-color: $mdc-theme-background;
 
-  border-radius: 2px;
-  
+  border-radius: $whatsapp-border-radius;
+
   mdc-toolbar {
-    border-radius: 2px;
+    border-radius: $whatsapp-border-radius;
+
+    .material-icons{
+      @include mdc-icon-button-ink-color(lighten($mdc-theme-secondary, 20));
+    }
   }
 }
 
