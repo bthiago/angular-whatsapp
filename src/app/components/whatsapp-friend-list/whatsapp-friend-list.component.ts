@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FriendList} from '../../classes/friend-list';
 import {User} from '../../classes/user';
 import {FriendService} from '../../services/friend.service';
@@ -11,7 +11,7 @@ import {FriendService} from '../../services/friend.service';
 export class WhatsappFriendListComponent implements OnInit {
   public friends: FriendList[];
 
-  constructor(private _friendService: FriendService, private _ref: ChangeDetectorRef) {
+  constructor(private _friendService: FriendService) {
   }
 
   ngOnInit() {
@@ -20,6 +20,5 @@ export class WhatsappFriendListComponent implements OnInit {
 
   selectFriend(friend: User) {
     this._friendService.selectedFriend = friend;
-    this._ref.detectChanges();
   }
 }

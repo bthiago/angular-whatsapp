@@ -1,22 +1,23 @@
-import {Injectable} from '@angular/core';
 import {FriendList} from '../classes/friend-list';
 import {User} from '../classes/user';
-import {Observable, of} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class FriendService {
 
   private _selectedFriend: User;
   private _friendList: FriendList[];
-  private _observable: Observable<User>;
+  private _observable: BehaviorSubject<User>;
 
   constructor() {
     this._friendList = this.getFakeFriendList();
+    this.getSelectedFriendObservable();
     this.selectedFriend = this._friendList[0].friend;
   }
 
-  getSelectedFriendObservable(): Observable<User> {
-    this._observable = of(this.selectedFriend);
+  getSelectedFriendObservable(): BehaviorSubject<User> {
+    this._observable = new BehaviorSubject(this.selectedFriend);
     return this._observable;
   }
 
@@ -26,6 +27,7 @@ export class FriendService {
 
   set selectedFriend(value: User) {
     this._selectedFriend = value;
+    this._observable.next(value);
   }
 
   get friendList(): FriendList[] {
