@@ -1,40 +1,25 @@
 @import "../../../sass/variables";
 @import "../../../../node_modules/@angular-mdc/theme/material";
 
-.container {
-  margin-top: 15px;
+.mdc-layout-grid {
+  padding-top: 10px;
+}
+
+.canvas-wrapper {
+  padding: 0;
   background-color: $mdc-theme-background;
 
-  .canvas-drawer {
-    @include mdc-drawer-ink-color(#fff);
+  border-radius: 2px;
+  
+  mdc-toolbar {
+    border-radius: 2px;
   }
+}
 
-  .canvas-content__drawer {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
+section[role=chats] {
+  border-right: 1px solid darken($mdc-theme-primary, 5);
+}
 
-    &--row {
-      display: flex;
-      flex-direction: row;
-    }
+section[role=messages] {
 
-    &--column {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &--temporary {
-      position: relative;
-      height: 55vh;
-    }
-
-    &--persistent {
-      display: flex;
-      height: 55vh;
-
-      .mdc-drawer--persistent:not(.mdc-drawer--open) {
-        display: none;
-      }
-    }
-  }
 }

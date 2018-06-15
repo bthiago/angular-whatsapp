@@ -1,6 +1,8 @@
 <mdc-list-item>
-  <p>
-    {{ chat.name }}
-  </p>
+  <mdc-list-item-graphic>
+    <img src="{{ chat.picture }}" alt="">
+  </mdc-list-item-graphic>
+  <mdc-list-item-text>{{ chat.name }}</mdc-list-item-text>
   <mdc-list-item-meta>{{ chat.time.toLocaleDateString('pt-BR') }}</mdc-list-item-meta>
 </mdc-list-item>
+<mdc-list-divider></mdc-list-divider>

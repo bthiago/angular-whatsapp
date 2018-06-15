@@ -11,9 +11,9 @@ export class ChatListComponent implements OnInit {
 
   constructor() {
     this.chats = [
-      new Chat('', 'Gohan Sayajin', new Date(), ''),
-      new Chat('', 'Goku Sayajin', new Date(), ''),
-      new Chat('', 'Vegeta Sayajin', new Date(), '')
+      new Chat('assets/user/picture/gohan-face.jpg', 'Gohan Sayajin', new Date(), ''),
+      new Chat('assets/user/picture/goku-face.jpg', 'Goku Sayajin', new Date(), ''),
+      new Chat('assets/user/picture/vegeta-face.jpg', 'Vegeta Sayajin', new Date(), '')
     ];
   }
 

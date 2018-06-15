@@ -1,4 +1,15 @@
 $mdc-theme-primary: #eeeeee;
-$mdc-theme-secondary: #388e3c;
+$mdc-theme-secondary: #4b5961;
 $mdc-theme-background: #fff;
 $mdc-theme-whatsapp-green: #009688;
+$mdc-layout-grid-default-gutter: (
+  desktop: 0px,
+  tablet: 0px,
+  phone: 0px
+);
+
+$mdc-layout-grid-default-margin: (
+  desktop: 53px,
+  tablet: 32px,
+  phone: 32px
+);

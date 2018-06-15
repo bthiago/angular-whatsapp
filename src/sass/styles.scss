@@ -3,7 +3,8 @@
 @import "~@angular-mdc/theme/material";
 
 body {
-  margin: 0px;
+  margin: 0;
+  background-color: $mdc-theme-primary;
 
   app-root {
     &:after {
@@ -14,32 +15,6 @@ body {
       height: 127px;
       content: ' ';
       top: 0;
-    }
-  }
-
-  .container {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto
-  }
-  @media (min-width: 576px) {
-    .container {
-      max-width: 540px
-    }
-  }
-  @media (min-width: 768px) {
-    .container {
-      max-width: 720px
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      max-width: 960px
-    }
-  }
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1140px
     }
   }
 }
