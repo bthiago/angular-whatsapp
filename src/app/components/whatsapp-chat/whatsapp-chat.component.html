@@ -1,11 +1,6 @@
-<mdc-list-item>
-  <mdc-list-item-graphic>
-    <img src="{{ chat.picture }}" alt="">
-  </mdc-list-item-graphic>
-  <mdc-list-item-text>{{ chat.name }}</mdc-list-item-text>
-  <mdc-list-item-secondary>{{ chat.lastMessage }}</mdc-list-item-secondary>
-  <mdc-list-item-meta>
-    {{ chat.time.toLocaleDateString('pt-BR') }}
-  </mdc-list-item-meta>
-</mdc-list-item>
+<li class="mdc-list-item" (click)="selectConversation($event, chat);">
+  <span class="mdc-list-item__graphic"> <img src="{{ chat.picture }}" alt=""></span>
+  <span class="mdc-list-item__text">{{ chat.name }}</span>
+  <span class="mdc-list-item__meta">{{ chat.time.toLocaleDateString('pt-BR') }}</span>
+</li>
 <mdc-list-divider></mdc-list-divider>
