@@ -3,6 +3,7 @@
     <img src="{{ chat.picture }}" alt="">
   </mdc-list-item-graphic>
   <mdc-list-item-text>{{ chat.name }}</mdc-list-item-text>
+  <mdc-list-item-secondary>{{ chat.lastMessage }}</mdc-list-item-secondary>
   <mdc-list-item-meta>
     {{ chat.time.toLocaleDateString('pt-BR') }}
   </mdc-list-item-meta>
