@@ -16,7 +16,7 @@
   mdc-toolbar {
     border-radius: $whatsapp-border-radius;
 
-    .material-icons{
+    .material-icons {
       @include mdc-icon-button-ink-color(lighten($mdc-theme-secondary, 20));
     }
   }

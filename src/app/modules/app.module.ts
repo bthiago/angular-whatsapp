@@ -7,6 +7,7 @@ import {CanvasComponent} from '../components/canvas/canvas.component';
 import {ChatComponent} from '../components/chat/chat.component';
 import {ChatListComponent} from '../components/chat-list/chat-list.component';
 import {ChatMessageComponent} from '../components/chat-message/chat-message.component';
+import {WhatsappSearchComponent} from '../components/whatsapp-search/whatsapp-search.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {ChatMessageComponent} from '../components/chat-message/chat-message.comp
     CanvasComponent,
     ChatListComponent,
     ChatComponent,
-    ChatMessageComponent
+    ChatMessageComponent,
+    WhatsappSearchComponent
   ],
   imports: [
     BrowserModule,
