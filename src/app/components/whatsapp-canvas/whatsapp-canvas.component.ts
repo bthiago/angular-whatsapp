@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from '../../classes/user';
 
 @Component({
   selector: 'app-canvas',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./whatsapp-canvas.component.scss']
 })
 export class WhatsappCanvasComponent implements OnInit {
+
   constructor() { }
 
   ngOnInit() {
