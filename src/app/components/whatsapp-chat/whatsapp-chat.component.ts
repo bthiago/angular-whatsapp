@@ -2,10 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.scss'],
+  templateUrl: './whatsapp-chat.component.html',
+  styleUrls: ['./whatsapp-chat.component.scss'],
 })
-export class ChatComponent implements OnInit {
+export class WhatsappChatComponent implements OnInit {
   @Input() public chat;
 
   constructor() { }

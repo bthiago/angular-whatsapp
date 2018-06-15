@@ -5,16 +5,16 @@
   padding-top: 20px;
 }
 
-.canvas-wrapper {
+.whatsapp-canvas-wrapper {
   overflow: hidden;
   min-height: 600px;
   padding: 0;
   background-color: $mdc-theme-background;
 
-  border-radius: $whatsapp-border-radius;
+  border-radius: $mdc-theme-whatsapp-border-radius;
 
   mdc-toolbar {
-    border-radius: $whatsapp-border-radius;
+    border-radius: $mdc-theme-whatsapp-border-radius;
 
     .material-icons {
       @include mdc-icon-button-ink-color(lighten($mdc-theme-secondary, 20));

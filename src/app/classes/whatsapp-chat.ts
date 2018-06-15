@@ -1,4 +1,4 @@
-export class Chat {
+export class WhatsappChat {
   private _picture: string;
   private _name: string;
   private _time: Date;
