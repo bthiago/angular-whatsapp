@@ -7,7 +7,7 @@ import {WhatsappCanvasComponent} from '../components/whatsapp-canvas/whatsapp-ca
 import {WhatsappFriendComponent} from '../components/whatsapp-friend/whatsapp-friend.component';
 import {WhatsappFriendListComponent} from '../components/whatsapp-friend-list/whatsapp-friend-list.component';
 import {WhatsappFriendMessageComponent} from '../components/whatsapp-friend-message-list/whatsapp-friend-message.component';
-import {WhatsappSearchComponent} from '../components/whatsapp-search/whatsapp-search.component';
+import {WhatsappFriendSearchComponent} from '../components/whatsapp-friend-search/whatsapp-friend-search.component';
 import {FriendService} from '../services/friend.service';
 
 @NgModule({
@@ -17,7 +17,7 @@ import {FriendService} from '../services/friend.service';
     WhatsappFriendListComponent,
     WhatsappFriendComponent,
     WhatsappFriendMessageComponent,
-    WhatsappSearchComponent
+    WhatsappFriendSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -8,17 +8,19 @@ export class FriendService {
 
   private _selectedFriend: User;
   private _friendList: FriendList[];
-  private _observable: BehaviorSubject<User>;
+  private _friendListObservable: BehaviorSubject<FriendList[]>;
+  private _selectedFriendObservable: BehaviorSubject<User>;
 
   constructor() {
     this._friendList = this.getFakeFriendList();
     this.getSelectedFriendObservable();
     this.selectedFriend = this._friendList[0].friend;
+    this._friendListObservable = new BehaviorSubject(this._friendList);
   }
 
   getSelectedFriendObservable(): BehaviorSubject<User> {
-    this._observable = new BehaviorSubject(this.selectedFriend);
-    return this._observable;
+    this._selectedFriendObservable = new BehaviorSubject(this.selectedFriend);
+    return this._selectedFriendObservable;
   }
 
   get selectedFriend(): User {
@@ -27,11 +29,26 @@ export class FriendService {
 
   set selectedFriend(value: User) {
     this._selectedFriend = value;
-    this._observable.next(value);
+    this._selectedFriendObservable.next(value);
   }
 
   get friendList(): FriendList[] {
     return this._friendList;
+  }
+
+  filterFriends(name: string) {
+    const filteredFriends = [];
+    this.friendList.forEach(friendList => {
+      if (friendList.friend.name.toUpperCase().indexOf(name.toUpperCase()) !== -1) {
+        filteredFriends.push(friendList);
+      }
+    });
+
+    this._friendListObservable.next(filteredFriends);
+  }
+
+  getFriendListObservable(): BehaviorSubject<FriendList[]> {
+    return this._friendListObservable;
   }
 
   private getFakeFriendList() {

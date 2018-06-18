@@ -15,7 +15,7 @@ export class WhatsappFriendListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.friends = this._friendService.friendList;
+    this._friendService.getFriendListObservable().subscribe(friends => { this.friends = friends; });
   }
 
   selectFriend(friend: User) {
