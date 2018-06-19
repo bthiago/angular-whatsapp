@@ -4,7 +4,7 @@ import {User} from '../../classes/user';
 import {FriendService} from '../../services/friend.service';
 
 @Component({
-  selector: 'app-friend-list',
+  selector: 'app-whatsapp-friend-list',
   templateUrl: './whatsapp-friend-list.component.html',
   styleUrls: ['./whatsapp-friend-list.component.scss'],
 })

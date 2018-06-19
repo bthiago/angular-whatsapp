@@ -1,19 +1,24 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from '../../classes/user';
 import {FriendService} from '../../services/friend.service';
 
 @Component({
-  selector: 'app-friend-message',
+  selector: 'app-whatsapp-friend-message-list',
   templateUrl: './whatsapp-friend-message.component.html',
   styleUrls: ['./whatsapp-friend-message.component.scss']
 })
 export class WhatsappFriendMessageComponent implements OnInit {
   public friend: User;
 
-  constructor(private _friendService: FriendService) { }
+  constructor(private _friendService: FriendService) {
+  }
 
   ngOnInit() {
     this._friendService.getSelectedFriendObservable().subscribe(friend => this.friend = friend);
   }
 
+  sendMessage(event, message: string) {
+    this.friend.addMessage(null, message);
+    event.target.value = '';
+  }
 }

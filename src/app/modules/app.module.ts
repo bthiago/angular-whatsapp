@@ -9,6 +9,7 @@ import {WhatsappFriendListComponent} from '../components/whatsapp-friend-list/wh
 import {WhatsappFriendMessageComponent} from '../components/whatsapp-friend-message-list/whatsapp-friend-message.component';
 import {WhatsappFriendSearchComponent} from '../components/whatsapp-friend-search/whatsapp-friend-search.component';
 import {FriendService} from '../services/friend.service';
+import {WhatsappMessageComponent} from '../components/whatsapp-message/whatsapp-message.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FriendService} from '../services/friend.service';
     WhatsappFriendListComponent,
     WhatsappFriendComponent,
     WhatsappFriendMessageComponent,
-    WhatsappFriendSearchComponent
+    WhatsappFriendSearchComponent,
+    WhatsappMessageComponent
   ],
   imports: [
     BrowserModule,

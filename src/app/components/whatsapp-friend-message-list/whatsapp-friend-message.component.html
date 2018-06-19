@@ -1,7 +1,10 @@
 <div class="whatsapp-chat-message-wrapper">
-  <div class="mdc-elevation--z1 whatsapp-type-box">
+  <div *ngIf="friend" class="whatsapp-message-list">
+    <app-whatsapp-message *ngFor="let message of friend.messages" [message]="message"></app-whatsapp-message>
+  </div>
+  <div *ngIf="friend" class="mdc-elevation--z1 whatsapp-type-box">
     <mdc-icon>insert_emoticon</mdc-icon>
-    <mdc-text-field [dense]="true" [fullwidth]="true" label="Type your text"></mdc-text-field>
+    <mdc-text-field #whatsappMessageText [dense]="true" [fullwidth]="true" label="Type your text" (keyup)="$event.keyCode == 13 && whatsappMessageText.value && sendMessage($event, whatsappMessageText.value)"></mdc-text-field>
     <mdc-icon>send</mdc-icon>
   </div>
 </div>

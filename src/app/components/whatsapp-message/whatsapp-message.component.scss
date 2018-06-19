@@ -1,0 +1,9 @@
+@import "../../../sass/variables";
+
+.whatsapp-message {
+  padding: 10px;
+  margin: 10px;
+  background-color: $mdc-theme-whatsapp-message-out;
+  border-radius: $mdc-theme-whatsapp-border-radius;
+  color: $mdc-theme-secondary;
+}

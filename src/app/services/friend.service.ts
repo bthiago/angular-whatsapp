@@ -2,6 +2,7 @@ import {FriendList} from '../classes/friend-list';
 import {User} from '../classes/user';
 import {BehaviorSubject} from 'rxjs';
 import {Injectable} from '@angular/core';
+import {Message} from '../classes/message';
 
 @Injectable()
 export class FriendService {
@@ -14,7 +15,7 @@ export class FriendService {
   constructor() {
     this._friendList = this.getFakeFriendList();
     this.getSelectedFriendObservable();
-    this.selectedFriend = this._friendList[0].friend;
+    this.selectedFriend = null;
     this._friendListObservable = new BehaviorSubject(this._friendList);
   }
 
@@ -55,7 +56,7 @@ export class FriendService {
     const gohan = new User('Gohan Sayajin', 'assets/user/picture/gohan-face.jpg');
     const goku = new User('Goku Sayajin', 'assets/user/picture/goku-face.jpg');
     const vegeta = new User('Vegeta Sayajin', 'assets/user/picture/vegeta-face.jpg');
-
+    
     return [
       new FriendList(gohan, null),
       new FriendList(goku, null),

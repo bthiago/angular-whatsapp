@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../../classes/user';
 
 @Component({
-  selector: 'app-canvas',
+  selector: 'app-whatsapp-canvas',
   templateUrl: './whatsapp-canvas.component.html',
   styleUrls: ['./whatsapp-canvas.component.scss']
 })

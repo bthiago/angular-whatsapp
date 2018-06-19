@@ -4,7 +4,11 @@
 .whatsapp-chat-message-wrapper {
   position: relative;
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
   align-items: flex-end;
+  align-content: flex-end;
+  flex-direction: column;
   padding: 10px;
   min-height: $mdc-theme-whatsapp-canvas-min-height;
   * {
@@ -36,8 +40,12 @@
 
     mdc-text-field {
       padding-left: 25px;
-      //margin: 5px 0 5px 0;
       background-color: $mdc-theme-background;
+    }
+  }
+
+  .whatsapp-message-list {
+    app-whatsapp-message:nth-child(even) {
     }
   }
 
