@@ -26,5 +26,6 @@ section[role=chats] {
 }
 
 section[role=messages] {
-
+  border-bottom: 5px solid lighten(green, 35);
+  background-color: $mdc-theme-background;
 }

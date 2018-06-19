@@ -53,14 +53,10 @@ export class FriendService {
   }
 
   private getFakeFriendList() {
-    const user1 = new User(faker.name.findName(), faker.image.avatar());
-    const user2 = new User(faker.name.findName(), faker.image.avatar());
-    const user3 = new User(faker.name.findName(), faker.image.avatar());
-
     return [
-      new FriendList(user1, null),
-      new FriendList(user2, null),
-      new FriendList(user3, null)
+      new FriendList(new User(faker.name.findName(), faker.image.avatar()), null),
+      new FriendList(new User(faker.name.findName(), faker.image.avatar()), null),
+      new FriendList(new User(faker.name.findName(), faker.image.avatar()), null)
     ];
   }
 }

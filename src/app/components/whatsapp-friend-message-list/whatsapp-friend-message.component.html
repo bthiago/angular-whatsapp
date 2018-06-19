@@ -1,4 +1,4 @@
-<div class="whatsapp-chat-message-wrapper">
+<div class="whatsapp-chat-message-wrapper" [ngClass]="{ 'whatsapp-bg-animated' : friend }">
   <div *ngIf="friend" class="whatsapp-message-list">
     <app-whatsapp-message *ngFor="let message of friend.messages" [message]="message"></app-whatsapp-message>
   </div>
