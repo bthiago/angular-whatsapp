@@ -1,9 +1,25 @@
 @import "../../../sass/variables";
 
 .whatsapp-message {
+  position: relative;
   padding: 10px;
   margin: 10px;
   background-color: $mdc-theme-whatsapp-message-out;
   border-radius: $mdc-theme-whatsapp-border-radius;
   color: $mdc-theme-secondary;
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-left-color: $mdc-theme-whatsapp-message-out;
+    border-right: 0;
+    border-top: 0;
+    margin-top: -16px;
+    margin-right: -12px;
+  }
 }
