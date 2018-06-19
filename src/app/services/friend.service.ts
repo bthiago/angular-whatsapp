@@ -2,7 +2,7 @@ import {FriendList} from '../classes/friend-list';
 import {User} from '../classes/user';
 import {BehaviorSubject} from 'rxjs';
 import {Injectable} from '@angular/core';
-import {Message} from '../classes/message';
+import * as faker from 'faker';
 
 @Injectable()
 export class FriendService {
@@ -53,14 +53,14 @@ export class FriendService {
   }
 
   private getFakeFriendList() {
-    const gohan = new User('Gohan Sayajin', 'assets/user/picture/gohan-face.jpg');
-    const goku = new User('Goku Sayajin', 'assets/user/picture/goku-face.jpg');
-    const vegeta = new User('Vegeta Sayajin', 'assets/user/picture/vegeta-face.jpg');
-    
+    const user1 = new User(faker.name.findName(), faker.image.avatar());
+    const user2 = new User(faker.name.findName(), faker.image.avatar());
+    const user3 = new User(faker.name.findName(), faker.image.avatar());
+
     return [
-      new FriendList(gohan, null),
-      new FriendList(goku, null),
-      new FriendList(vegeta, null)
+      new FriendList(user1, null),
+      new FriendList(user2, null),
+      new FriendList(user3, null)
     ];
   }
 }
