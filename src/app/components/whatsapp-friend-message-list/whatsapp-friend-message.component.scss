@@ -61,7 +61,7 @@
     &:nth-child(even) {
       align-self: flex-end;
       background-color: $mdc-theme-whatsapp-message-out;
-      &:after{
+      &:after {
         border-left-color: $mdc-theme-whatsapp-message-out;
       }
     }
