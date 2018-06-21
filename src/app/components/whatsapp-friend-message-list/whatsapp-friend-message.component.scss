@@ -5,8 +5,8 @@
   position: relative;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   align-content: flex-end;
   flex-direction: column;
   padding: 10px;
@@ -15,6 +15,25 @@
     z-index: 1;
   }
   border-bottom: 5px solid lighten(green, 35);
+
+  .whatsapp-intro {
+    align-self: center;
+    align-content: center;
+    max-width: 350px;
+
+    p {
+      color: $mdc-theme-secondary;
+    }
+    h1 {
+
+    }
+
+    div {
+      background-image: url('../../../assets/web/bg_intro.jpg');
+      height: 355px;
+      width: 356px;
+    }
+  }
 
   .whatsapp-type-box {
     display: flex;
@@ -70,6 +89,8 @@
 
 .whatsapp-bg-animated {
   border-bottom: none;
+  justify-content: flex-end;
+  align-items: flex-end;
 
   &:after {
     content: "";

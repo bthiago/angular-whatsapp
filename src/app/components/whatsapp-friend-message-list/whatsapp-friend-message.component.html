@@ -1,9 +1,23 @@
 <div class="whatsapp-chat-message-wrapper" [ngClass]="{ 'whatsapp-bg-animated' : friend }">
-  <app-whatsapp-message [mdc-elevation]="2" *ngFor="let message of friend.messages"
-                        [message]="message"></app-whatsapp-message>
+
+  <div class="whatsapp-intro" *ngIf="!friend" align="center">
+    <div></div>
+    <h1 mdcHeadline4>Mantenha seu telefone conectado</h1>
+    <p mdcCaption>
+      O WhatsApp conecta ao seu telefone para sincronizar suas mensagens. Para reduzir o uso de seu
+      plano de dados, conecte seu telefone a uma rede Wi-Fi.
+    </p>
+  </div>
+
+  <div *ngIf="friend; then whatsappMessageList"></div>
+  <ng-template #whatsappMessageList>
+    <app-whatsapp-message [mdc-elevation]="2" *ngFor="let message of friend.messages" [message]="message"></app-whatsapp-message>
+  </ng-template>
+
   <div *ngIf="friend" class="mdc-elevation--z1 whatsapp-type-box">
     <mdc-icon>insert_emoticon</mdc-icon>
-    <mdc-text-field #whatsappMessageText [dense]="true" [fullwidth]="true" label="Type your text" (keyup)="$event.keyCode == 13 && whatsappMessageText.value && sendMessage($event, whatsappMessageText.value)"></mdc-text-field>
+    <mdc-text-field #whatsappMessageText [dense]="true" [fullwidth]="true" label="Type your text"
+                    (keyup)="$event.keyCode == 13 && whatsappMessageText.value && sendMessage($event, whatsappMessageText.value)"></mdc-text-field>
     <mdc-icon>send</mdc-icon>
   </div>
 </div>
