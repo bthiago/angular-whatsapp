@@ -57,6 +57,26 @@ export class FriendService {
     user1.addMessage(null, faker.hacker.phrase());
     user1.addMessage(null, faker.hacker.phrase());
     user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
+    user1.addMessage(null, faker.hacker.phrase());
 
     return [
       new FriendList(user1, null),

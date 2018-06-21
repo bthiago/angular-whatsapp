@@ -10,11 +10,13 @@
   align-content: flex-end;
   flex-direction: column;
   padding: 10px;
-  min-height: $mdc-theme-whatsapp-canvas-min-height;
+  height: $mdc-theme-whatsapp-canvas-min-height;
+  overflow: hidden;
+  border-bottom: 5px solid lighten(green, 35);
+
   * {
     z-index: 1;
   }
-  border-bottom: 5px solid lighten(green, 35);
 
   .whatsapp-intro {
     align-self: center;
@@ -50,6 +52,14 @@
       padding-left: 25px;
       background-color: $mdc-theme-background;
     }
+  }
+
+  .whatsapp-messages-roll {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   app-whatsapp-message {

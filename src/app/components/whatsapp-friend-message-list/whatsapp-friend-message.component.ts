@@ -20,5 +20,11 @@ export class WhatsappFriendMessageComponent implements OnInit {
   sendMessage(event, message: string) {
     this.friend.addMessage(null, message);
     event.target.value = '';
+
+    // @todo refactor this part of code
+    setTimeout(() => {
+      const whatsappMessagesRoll = document.querySelector('.whatsapp-messages-roll');
+      whatsappMessagesRoll.scrollTo(0, whatsappMessagesRoll.scrollHeight);
+    }, 10);
   }
 }
