@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {User} from '../../classes/user';
 import {FriendService} from '../../services/friend.service';
 
@@ -9,6 +9,7 @@ import {FriendService} from '../../services/friend.service';
 })
 export class WhatsappFriendMessageComponent implements OnInit {
   public friend: User;
+  @ViewChild('whatsappMessageRoll') whatsappMessageRoll: ElementRef;
 
   constructor(private _friendService: FriendService) {
   }
@@ -20,11 +21,5 @@ export class WhatsappFriendMessageComponent implements OnInit {
   sendMessage(event, message: string) {
     this.friend.addMessage(null, message);
     event.target.value = '';
-
-    // @todo refactor this part of code
-    setTimeout(() => {
-      const whatsappMessagesRoll = document.querySelector('.whatsapp-messages-roll');
-      whatsappMessagesRoll.scrollTo(0, whatsappMessagesRoll.scrollHeight);
-    }, 10);
   }
 }
