@@ -4,6 +4,7 @@
       <mdc-toolbar>
         <mdc-toolbar-row>
           <mdc-toolbar-section [alignStart]="true">
+            <img src="{{ loggedUser.picture }}" alt="">
           </mdc-toolbar-section>
           <mdc-toolbar-section [alignEnd]="true" [shrinkToFit]="true">
             <a href="#/more" mdcRipple mdc-toolbar-icon material-icon>message</a>
@@ -22,6 +23,9 @@
       <mdc-toolbar>
         <mdc-toolbar-row>
           <mdc-toolbar-section [alignStart]="true">
+            <div *ngIf="selectedFriend !== null;">
+              <img src="{{ selectedFriend.picture }}" alt="">
+            </div>
           </mdc-toolbar-section>
           <mdc-toolbar-section [alignEnd]="true" [shrinkToFit]="true">
             <a href="#/more" mdcRipple mdc-toolbar-icon material-icon>search</a>

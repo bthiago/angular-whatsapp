@@ -82,4 +82,12 @@ export class FriendService {
   private createFakeUser() {
     return new User(faker.name.findName(), faker.image.avatar());
   }
+
+  sendMessage(text: string, to: User) {
+    to.addMessage(this.loggedUser, text);
+
+    setTimeout(function () {
+      to.addMessage(to, faker.hacker.phrase());
+    }, 1500);
+  }
 }

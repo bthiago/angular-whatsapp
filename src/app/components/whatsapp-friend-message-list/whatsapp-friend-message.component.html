@@ -12,7 +12,7 @@
   <div *ngIf="friend; then whatsappMessageList"></div>
   <ng-template #whatsappMessageList>
     <div class="whatsapp-messages-roll" #whatsappMessageRoll [scrollTop]="whatsappMessageRoll.scrollHeight">
-      <app-whatsapp-message [mdc-elevation]="2" *ngFor="let message of friend.messages" [message]="message" [ngClass]="{'whatsapp-message-in' : message.sender.name == friend.name, 'whatsapp-message-out' : message.receiver.name == friend.name }"></app-whatsapp-message>
+      <app-whatsapp-message [mdc-elevation]="2" *ngFor="let message of friend.messages" [message]="message" [ngClass]="getMessageSender(message)"></app-whatsapp-message>
     </div>
   </ng-template>
 
