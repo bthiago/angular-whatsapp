@@ -11,11 +11,12 @@ import {FriendService} from '../../services/friend.service';
 export class WhatsappFriendListComponent implements OnInit {
   public friends: FriendList[];
 
-  constructor(private _friendService: FriendService) {
-  }
+  constructor(private _friendService: FriendService) {  }
 
   ngOnInit() {
-    this._friendService.getFriendListObservable().subscribe(friends => { this.friends = friends; });
+    this._friendService.getFriendListObservable().subscribe(friends => {
+      this.friends = friends;
+    });
   }
 
   selectFriend(friend: User) {

@@ -16,14 +16,14 @@ export class FriendService {
 
   constructor() {
     this._friendList = this.getFakeFriendList();
-    this.getSelectedFriendObservable();
-    this.selectedFriend = null;
     this._friendListObservable = new BehaviorSubject(this._friendList);
+    this._selectedFriend = null;
+    this._selectedFriendObservable = new BehaviorSubject(null);
     this._loggedUser = this.createFakeUser();
+    this._loggedUserObservable = new BehaviorSubject(this._loggedUser);
   }
 
   getSelectedFriendObservable(): BehaviorSubject<User> {
-    this._selectedFriendObservable = new BehaviorSubject(this.selectedFriend);
     return this._selectedFriendObservable;
   }
 
