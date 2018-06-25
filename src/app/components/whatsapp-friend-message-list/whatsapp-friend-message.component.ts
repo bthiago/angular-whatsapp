@@ -9,6 +9,7 @@ import {FriendService} from '../../services/friend.service';
 })
 export class WhatsappFriendMessageComponent implements OnInit {
   public friend: User;
+
   @ViewChild('whatsappMessageRoll') whatsappMessageRoll: ElementRef;
 
   constructor(private _friendService: FriendService) {

@@ -7,6 +7,8 @@ import * as faker from 'faker';
 @Injectable()
 export class FriendService {
 
+  private _loggedUser: User;
+  private _loggedUserObservable: BehaviorSubject<User>;
   private _selectedFriend: User;
   private _friendList: FriendList[];
   private _friendListObservable: BehaviorSubject<FriendList[]>;
@@ -17,11 +19,28 @@ export class FriendService {
     this.getSelectedFriendObservable();
     this.selectedFriend = null;
     this._friendListObservable = new BehaviorSubject(this._friendList);
+    this._loggedUser = this.createFakeUser();
   }
 
   getSelectedFriendObservable(): BehaviorSubject<User> {
     this._selectedFriendObservable = new BehaviorSubject(this.selectedFriend);
     return this._selectedFriendObservable;
+  }
+
+  get loggedUser(): User {
+    return this._loggedUser;
+  }
+
+  set loggedUser(value: User) {
+    this._loggedUser = value;
+  }
+
+  get loggedUserObservable(): BehaviorSubject<User> {
+    return this._loggedUserObservable;
+  }
+
+  set loggedUserObservable(value: BehaviorSubject<User>) {
+    this._loggedUserObservable = value;
   }
 
   get selectedFriend(): User {
@@ -53,35 +72,14 @@ export class FriendService {
   }
 
   private getFakeFriendList() {
-    const user1 = new User(faker.name.findName(), faker.image.avatar());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-    user1.addMessage(null, faker.hacker.phrase());
-
     return [
-      new FriendList(user1, null),
-      new FriendList(new User(faker.name.findName(), faker.image.avatar()), null),
-      new FriendList(new User(faker.name.findName(), faker.image.avatar()), null)
+      new FriendList(this.createFakeUser(), null),
+      new FriendList(this.createFakeUser(), null),
+      new FriendList(this.createFakeUser(), null)
     ];
+  }
+
+  private createFakeUser() {
+    return new User(faker.name.findName(), faker.image.avatar());
   }
 }
