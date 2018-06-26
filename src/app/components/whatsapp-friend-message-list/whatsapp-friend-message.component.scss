@@ -22,12 +22,10 @@
     align-self: center;
     align-content: center;
     max-width: 350px;
+    color: $mdc-theme-secondary;
 
-    p {
-      color: $mdc-theme-secondary;
-    }
     h1 {
-
+      font-weight: lighter;
     }
 
     div {
