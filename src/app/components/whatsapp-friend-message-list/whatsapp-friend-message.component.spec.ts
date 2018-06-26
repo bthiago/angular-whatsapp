@@ -1,6 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WhatsappFriendMessageComponent } from './whatsapp-friend-message.component';
+import {WhatsappFriendMessageComponent} from './whatsapp-friend-message.component';
+import {MaterialModule} from '../../modules/material.module';
+import {WhatsappMessageComponent} from '../whatsapp-message/whatsapp-message.component';
+import {FriendService} from '../../services/friend.service';
 
 describe('WhatsappFriendMessageComponent', () => {
   let component: WhatsappFriendMessageComponent;
@@ -8,9 +11,18 @@ describe('WhatsappFriendMessageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WhatsappFriendMessageComponent ]
+      declarations: [
+        WhatsappFriendMessageComponent,
+        WhatsappMessageComponent,
+      ],
+      imports: [
+        MaterialModule
+      ],
+      providers: [
+        FriendService
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

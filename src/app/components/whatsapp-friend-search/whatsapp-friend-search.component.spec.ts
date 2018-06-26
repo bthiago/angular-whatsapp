@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WhatsappFriendSearchComponent } from './whatsapp-friend-search.component';
+import {MaterialModule} from '../../modules/material.module';
+import {FriendService} from '../../services/friend.service';
 
 describe('WhatsappFriendSearchComponent', () => {
   let component: WhatsappFriendSearchComponent;
@@ -8,7 +10,15 @@ describe('WhatsappFriendSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WhatsappFriendSearchComponent ]
+      declarations: [
+        WhatsappFriendSearchComponent
+      ],
+      imports: [
+        MaterialModule
+      ],
+      providers: [
+        FriendService
+      ]
     })
     .compileComponents();
   }));
